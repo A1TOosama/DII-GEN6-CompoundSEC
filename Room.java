@@ -3,6 +3,10 @@ public class Room {
     private String type;
     private boolean isAvailable;
 
+    public void freeRoom() {
+        this.isAvailable = true;
+    }
+
     public Room(int roomNumber, String type) {
         this.roomNumber = roomNumber;
         this.type = type;
@@ -25,12 +29,9 @@ public class Room {
         this.isAvailable = false;
     }
 
-    public void freeRoom() {
-        this.isAvailable = true;
-    }
-
     @Override
     public String toString() {
-        return "Room " + roomNumber + " (" + type + ") - " + (isAvailable ? "Available" : "Booked");
+        return "Rooms " + roomNumber + " (" + type + ")";
     }
+
 }

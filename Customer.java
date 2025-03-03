@@ -17,6 +17,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer: " + name + ", Phone: " + phoneNumber;
+        return "👤 " + name + " | 📞 " + phoneNumber;
     }
 }

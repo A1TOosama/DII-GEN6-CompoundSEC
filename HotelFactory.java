@@ -1,9 +1,15 @@
 public class HotelFactory {
     public static Hotel createHotel() {
         Hotel hotel = new Hotel();
-        hotel.addRoom(new Room(101, "Standard"));
-        hotel.addRoom(new Room(102, "Deluxe"));
-        hotel.addRoom(new Room(103, "Suite"));
+        String[] roomTypes = {"Standard", "Deluxe", "Suite"};
+
+        for (int floor = 1; floor <= 3; floor++) {
+            for (int i = 1; i <= 3; i++) {
+                int roomNumber = (floor * 100) + i;
+                String roomType = roomTypes[(i - 1) % roomTypes.length];
+                hotel.addRoom(floor, new Room(roomNumber, roomType));
+            }
+        }
         return hotel;
     }
 }
